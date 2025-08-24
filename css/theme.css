@@ -1,0 +1,78 @@
+/* theme.css */
+
+/* Default theme: Light */
+:root {
+  /* Backgrounds */
+  --bg: #fbf1c7;
+  --bg0_h: #f9f5d7;
+  --bg0: #fbf1c7;
+  --bg1: #ebdbb2;
+  --bg2: #d5c4a1;
+  --bg3: #bdae93;
+  --bg4: #a89984;
+  --bg0_s: #f2e5bc;
+
+  /* Foregrounds */
+  --fg0: #282828;
+  --fg1: #3c3836;
+  --fg2: #504945;
+  --fg3: #665c54;
+  --fg4: #7c6f64;
+
+  /* Colors */
+  --red: #9d0006;
+  --green: #79740e;
+  --yellow: #b57614;
+  --blue: #076678;
+  --purple: #8f3f71;
+  --aqua: #427b58;
+  --gray: #928374;
+  --orange: #af3a03;
+
+  /* Colors */
+  --red_: #cc241d;
+  --green_: #98971a;
+  --yellow_: #d79921;
+  --blue_: #458588;
+  --purple_: #b16286;
+  --aqua_: #689d6a;
+  --gray_: #7c6f64;
+  --orange_: #d65d0e;
+}
+
+/* Dark theme override */
+[data-theme="dark"] {
+  --bg: #282828;
+  --bg0_h: #1d2021;
+  --bg0: #282828;
+  --bg1: #3c3836;
+  --bg2: #504945;
+  --bg3: #665c54;
+  --bg4: #7c6f64;
+  --bg0_s: #32302f;
+
+  --fg0: #fbf1c7;
+  --fg1: #ebdbb2;
+  --fg2: #d5c4a1;
+  --fg3: #bdae93;
+  --fg4: #a89984;
+
+  --red: #cc241d;
+  --green: #98971a;
+  --yellow: #d79921;
+  --blue: #458588;
+  --purple: #b16286;
+  --aqua: #689d6a;
+  --gray: #a89984;
+  --orange: #d65d0e;
+
+  /* Colors */
+  --red_: #9d0006;
+  --green_: #79740e;
+  --yellow_: #b57614;
+  --blue_: #076678;
+  --purple_: #8f3f71;
+  --aqua_: #427b58;
+  --gray_: #928374;
+  --orange_: #af3a03;
+}
