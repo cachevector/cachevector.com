@@ -43,18 +43,14 @@ body {
 }
 
 .nav-item:hover {
-    color: #10b981;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
 }
 
 .github-btn {
-    background: linear-gradient(135deg, #10b981, #059669);
-    border: 1px solid #10b981;
+    background: linear-gradient(135deg, #689d6a, #427b58);
+    border: 1px solid #427b58;
     transition: all 0.3s ease;
-}
-
-.github-btn:hover {
-    background: transparent;
-    color: #10b981;
 }
 
 .mission-btn {
@@ -81,12 +77,6 @@ body {
     border: 1px solid #374151;
 }
 
-/* .typewriter {
-    overflow: hidden;
-    border-right: 2px solid #10b981;
-    white-space: nowrap;
-    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-} */
 
 @keyframes typing {
     from { width: 0 }
