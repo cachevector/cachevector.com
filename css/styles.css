@@ -49,7 +49,7 @@ body {
 
 .github-btn {
     background: linear-gradient(135deg, #689d6a, #427b58);
-    border: 1px solid #427b58;
+    /* border: 1px solid #427b58; */
     transition: all 0.3s ease;
 }
 
