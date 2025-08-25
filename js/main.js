@@ -1,22 +1,22 @@
-// --- Seline Analytics ---
-function initSeline() {
-  if (typeof seline !== "undefined") {
-    seline.init({
-      token: "091747081ed47e6",
-      autoPageView: true
-    });
-    console.log("Seline initialized");
-  } else {
-    setTimeout(initSeline, 100);
-  }
-}
-document.addEventListener("DOMContentLoaded", initSeline);
+// // --- Seline Analytics ---
+// function initSeline() {
+//   if (typeof seline !== "undefined") {
+//     seline.init({
+//       token: "091747081ed47e6",
+//       autoPageView: true
+//     });
+//     console.log("Seline initialized");
+//   } else {
+//     setTimeout(initSeline, 100);
+//   }
+// }
+// document.addEventListener("DOMContentLoaded", initSeline);
 
-function scrollToMission() {
-    document.getElementById('mission').scrollIntoView({ 
-        behavior: 'smooth' 
-    });
-}
+// function scrollToMission() {
+//     document.getElementById('mission').scrollIntoView({ 
+//         behavior: 'smooth' 
+//     });
+// }
 
 // Add some interactive animations
 document.addEventListener('DOMContentLoaded', function() {
@@ -80,18 +80,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 const html = await res.text();
                 document.querySelector('#content').innerHTML = html;
                 window.history.pushState({ page: 'mission' }, "Mission", "#Mission");
+                seline.page();
             }
             else if (target === '#Projects') {
                 const res = await fetch('pages/projects.html');
                 const html = await res.text();
                 document.querySelector('#content').innerHTML = html;
                 window.history.pushState({ page: 'projects' }, "Projects", "#Projects");
+                seline.page();
             }
             else if (target === '#Blogs') {
                 const res = await fetch('pages/blogs.html');
                 const html = await res.text();
                 document.querySelector('#content').innerHTML = html;
                 window.history.pushState({ page: 'blogs' }, "Blogs", "#Blogs");
+                seline.page();
             }
 
             setActiveNav(target); // highlight correct nav link
