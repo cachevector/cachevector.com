@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 .space-mono-regular {
   font-family: "Space Mono", monospace;
@@ -49,7 +49,6 @@ body {
 
 .github-btn {
     background: linear-gradient(135deg, #689d6a, #427b58);
-    /* border: 1px solid #427b58; */
     transition: all 0.3s ease;
 }
 
@@ -104,4 +103,134 @@ body {
 .social-icon:hover {
     color: #10b981;
     transform: translateY(-2px);
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.space-mono-regular {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.space-mono-bold {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.space-mono-regular-italic {
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.space-mono-bold-italic {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
+body {
+    font-family: 'Space Mono', monospace;
+    background: #0a0a0a; /* Note: This overrides the Tailwind body bg; consider removing if conflicting */
+}
+
+.leaf-icon {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.nav-item {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
+.github-btn {
+    background: linear-gradient(135deg, #689d6a, #427b58);
+    transition: all 0.3s ease;
+}
+
+.mission-btn {
+    border: 1px solid #374151;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.mission-btn:hover {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.hero-text {
+    background: linear-gradient(135deg, #ffffff, #d1d5db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.mission-section {
+    background: rgba(17, 24, 39, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid #374151;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #10b981; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.social-icon {
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #10b981;
+    transform: translateY(-2px);
+}
+
+/* Custom Media Queries for Mobile Menu (beyond Tailwind) */
+@media (max-width: 639px) {
+    #nav-links {
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+/* Custom Media Queries for Mobile Menu */
+@media (max-width: 639px) {
+    #nav-links {
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    #nav-links:not(.hidden) {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure nav height is accounted for in positioning */
+nav {
+    min-height: 64px; /* Matches approximate nav height with padding */
 }
