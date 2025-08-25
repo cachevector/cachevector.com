@@ -1,3 +1,17 @@
+// --- Seline Analytics ---
+function initSeline() {
+  if (typeof seline !== "undefined") {
+    seline.init({
+      token: "091747081ed47e6",
+      autoPageView: true
+    });
+    console.log("Seline initialized");
+  } else {
+    setTimeout(initSeline, 100);
+  }
+}
+document.addEventListener("DOMContentLoaded", initSeline);
+
 function scrollToMission() {
     document.getElementById('mission').scrollIntoView({ 
         behavior: 'smooth' 
