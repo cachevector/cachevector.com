@@ -1,47 +1,9 @@
 // Add interactive animations and hamburger menu toggle
 document.addEventListener("DOMContentLoaded", function () {
   // Intercept nav clicks
-  const navLinks = document.querySelectorAll("a.nav-item");
+  const navLinks = document.querySelectorAll("a.navbar-button");
   const menuToggle = document.getElementById("menu-toggle");
   const navLinksContainer = document.getElementById("nav-links");
-
-  // Mobile menu toggle
-  if (menuToggle && navLinksContainer) {
-    menuToggle.addEventListener("click", () => {
-      // Toggle visibility with a single class
-      navLinksContainer.classList.toggle("hidden");
-      // Ensure flex and vertical stacking are applied when visible
-      if (!navLinksContainer.classList.contains("hidden")) {
-        navLinksContainer.classList.add(
-          "flex",
-          "flex-col",
-          "space-y-4",
-          "absolute",
-          "left-0",
-          "bg-[#f9f5d7]",
-          "dark:bg-[#1d2021]",
-          "w-full",
-          "p-4",
-        );
-        // Remove 'top-full' as it's now handled by HTML class 'top-16'
-      } else {
-        // Remove styling classes when hidden to reset state
-        navLinksContainer.classList.remove(
-          "flex",
-          "flex-col",
-          "space-y-4",
-          "absolute",
-          "left-0",
-          "bg-[#f9f5d7]",
-          "dark:bg-[#1d2021]",
-          "w-full",
-          "p-4",
-        );
-      }
-    });
-  } else {
-    console.error("Menu toggle or nav links container not found in DOM");
-  }
 
   function setActiveNav(target) {
     navLinks.forEach((link) => {
@@ -75,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.history.pushState({ page: "projects" }, "Projects", "/projects");
       } else if (target === "/Blogs") {
         const res = await fetch("pages/blogs.html");
+        console.log(target);
         contentHTML = await res.text();
         window.history.pushState({ page: "blogs" }, "Blogs", "/blogs");
       }
@@ -85,24 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       setActiveNav(target); // Highlight correct nav link
 
-      // Close mobile menu after link click
-      if (
-        navLinksContainer &&
-        !navLinksContainer.classList.contains("hidden")
-      ) {
-        navLinksContainer.classList.add("hidden");
-        navLinksContainer.classList.remove(
-          "flex",
-          "flex-col",
-          "space-y-4",
-          "absolute",
-          "left-0",
-          "bg-[#f9f5d7]",
-          "dark:bg-[#1d2021]",
-          "w-full",
-          "p-4",
-        );
-      }
     });
   });
 });
