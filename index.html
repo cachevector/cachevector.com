@@ -122,20 +122,9 @@
 
             <!-- Mission Section -->
             <section class="pb-4">
-                <!-- <div class="mt-16">
-                    <div class="product-header">
-                        <h2 class="underline text-xl sm:text-2xl md:text-3xl font-bold mb-6 sm:mb-8">
-                            # our mission
-                        </h2>
-                    </div>
-                    <p class="hashprep-description">
-                        Think <strong>"Pandas Profiling + ESLint + AutoML"</strong> specifically designed for ML
-                        datasets.
-                    </p>
-                </div> -->
                 <div class="mt-16">
                     <div>
-                        <h2
+                        <h2 id="mission"
                             class="bg-[#427b58] text-[#f9f5d7] p-2 inline-block border-4 border-[#000] text-2xl font-bold mb-8">
                             our mission</h2>
                         <p class="mb-8 text-[#1d2021] italic">
@@ -166,7 +155,9 @@
                         </div>
                     </div>
                     <p style="margin-top: 3rem; color: var(--accent);">
-                        Our projects are open, simple, and built to be useful. If something helps you, star it. If you can improve it, fork it. Even just exploring the repos means a lot — the work is meant to be shared.
+                        Our projects are open, simple, and built to be useful. If something helps you, star it. If you
+                        can improve it, fork it. Even just exploring the repos means a lot — the work is meant to be
+                        shared.
                     </p>
                 </div>
             </section>
@@ -174,50 +165,74 @@
         </main>
     </div>
 
-    <!-- Footer -->
-    <footer
-        class="w-full sm:w-4/5 md:w-3/5 container mx-auto px-4 sm:px-6 py-6 sm:py-8 border-t border-[#1d2021] dark:border-[#f9f5d7] text-base sm:text-lg">
-        <!-- Responsive width and padding -->
-        <div class="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
-            <!-- Left Side -->
-            <div class="flex items-center space-x-4">
-                <div>
-                    <img src="assets/logos/Cache_Vector.svg" alt="CacheVector Logo" class="w-12 sm:w-16 h-12 sm:h-16" />
-                    <!-- Scaled for mobile -->
-                </div>
-                <div>
-                    <p>© 2025 CacheVector</p>
-                    <p>All rights reserved</p>
-                </div>
+<!-- Footer -->
+<footer
+    class="w-full sm:w-4/5 md:w-3/5 container mx-auto px-4 sm:px-6 py-6 sm:py-8 border-t border-[#1d2021] dark:border-[#f9f5d7] text-base sm:text-lg">
+    <!-- Responsive width and padding -->
+    <div class="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+        <!-- Left Side -->
+        <div class="flex items-center space-x-4">
+            <div>
+                <img src="assets/logos/Cache_Vector.svg" alt="CacheVector Logo" class="w-12 sm:w-16 h-12 sm:h-16" />
             </div>
+            <div class="hidden sm:block">
+                <p>© 2025 CacheVector</p>
+                <p>All rights reserved</p>
+            </div>
+        </div>
 
-            <!-- Right Side -->
-            <div class="flex flex-col items-center sm:items-end">
-                <div class="flex space-x-4">
+        <!-- Right Side -->
+        <div class="flex flex-col items-center sm:items-end w-full sm:w-auto">
+            <!-- Mobile order (socials → backed → copyright) -->
+            <div class="flex flex-col items-center sm:hidden w-full space-y-2">
+                <div class="flex space-x-4 justify-center">
                     <a href="https://www.github.com/cachevector" target="_blank" class="social-icon text-gray-400">
                         <img src="assets/icons/github_dm.svg" alt="Github Link"
-                            class="dark:block hidden w-5 sm:w-8 h-5 sm:h-8" />
+                            class="dark:block hidden w-8 h-8" />
                         <img src="assets/icons/github_lm.svg" alt="Github Link"
-                            class="block dark:hidden w-5 sm:w-8 h-5 sm:h-8" />
-                        <!-- Scaled -->
+                            class="block dark:hidden w-8 h-8" />
                     </a>
                     <a href="https://x.com/cvectordotcom" target="_blank" class="social-icon text-gray-400">
-                        <img src="assets/icons/x_dm.svg" alt="X Link"
-                            class="dark:block hidden w-5 sm:w-8 h-5 sm:h-8" />
-                        <img src="assets/icons/x_lm.svg" alt="X Link"
-                            class="block dark:hidden w-5 sm:w-8 h-5 sm:h-8" />
+                        <img src="assets/icons/x_dm.svg" alt="X Link" class="dark:block hidden w-8 h-8" />
+                        <img src="assets/icons/x_lm.svg" alt="X Link" class="block dark:hidden w-8 h-8" />
                     </a>
                     <a href="https://discord.gg/spuz77bcJg" target="_blank" class="social-icon text-gray-400">
                         <img src="assets/icons/discord_dm.svg" alt="Discord Link"
-                            class="dark:block hidden w-5 sm:w-8 h-5 sm:h-8" />
+                            class="dark:block hidden w-8 h-8" />
                         <img src="assets/icons/discord_lm.svg" alt="Discord Link"
-                            class="block dark:hidden w-5 sm:w-8 h-5 sm:h-8" />
+                            class="block dark:hidden w-8 h-8" />
+                    </a>
+                </div>
+                <div class="text-sm">Backed by Growvth</div>
+                <div class="text-xs text-center">© 2025 CacheVector. All rights reserved.</div>
+            </div>
+
+            <!-- Desktop order (unchanged) -->
+            <div class="hidden sm:flex flex-col items-end">
+                <div class="flex space-x-4">
+                    <a href="https://www.github.com/cachevector" target="_blank" class="social-icon text-gray-400">
+                        <img src="assets/icons/github_dm.svg" alt="Github Link"
+                            class="dark:block hidden w-8 h-8" />
+                        <img src="assets/icons/github_lm.svg" alt="Github Link"
+                            class="block dark:hidden w-8 h-8" />
+                    </a>
+                    <a href="https://x.com/cvectordotcom" target="_blank" class="social-icon text-gray-400">
+                        <img src="assets/icons/x_dm.svg" alt="X Link" class="dark:block hidden w-8 h-8" />
+                        <img src="assets/icons/x_lm.svg" alt="X Link" class="block dark:hidden w-8 h-8" />
+                    </a>
+                    <a href="https://discord.gg/spuz77bcJg" target="_blank" class="social-icon text-gray-400">
+                        <img src="assets/icons/discord_dm.svg" alt="Discord Link"
+                            class="dark:block hidden w-8 h-8" />
+                        <img src="assets/icons/discord_lm.svg" alt="Discord Link"
+                            class="block dark:hidden w-8 h-8" />
                     </a>
                 </div>
                 <div class="mt-2">Backed by Growvth</div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
+
 </body>
 
 </html>

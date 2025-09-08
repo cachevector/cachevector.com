@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
 
 .space-mono-regular {
     font-family: "Space Mono", monospace;
@@ -31,6 +32,7 @@ body {
 }
 
 .hero-header {
+    font-family: "Kode Mono", monospace;
     text-shadow: 4px 4px 0px #7c6f64;
 }
 
@@ -289,5 +291,46 @@ nav {
 
     .feature-item {
         padding: 1.5rem;
+    }
+
+    .cta-button {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+        box-shadow: 4px 4px 0 #000;
+    }
+
+    .cta-button:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0px #000;
+    }
+
+    .mission-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .mission-card {
+        padding: 1.5rem;
+        box-shadow: 4px 4px 0px #427b58;
+    }
+
+    .mission-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .mission-card p {
+        font-size: 0.9rem;
+    }
+
+    #mission {
+        padding: 0.3rem 0.8rem;
+        border-width: 3px;
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-header {
+        text-shadow: 2px 2px 2px #7c6f64;
     }
 }
