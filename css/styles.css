@@ -27,8 +27,6 @@
 
 body {
     font-family: "Space Mono", monospace;
-    background: #0a0a0a;
-    /* Note: This overrides the Tailwind body bg; consider removing if conflicting */
 }
 
 .hero-header {
@@ -83,8 +81,6 @@ body {
     color: #fbf1c7;
     text-decoration: none;
     font-weight: bold;
-    /* border: 3px solid #22412f; */
-    /*transform: translate(0, 0);*/
     transition: all 0.2s ease;
     font-size: 1.1rem;
     /* box-shadow: 6px 6px 0 #000; */
@@ -103,10 +99,7 @@ body {
     text-decoration: none;
     font-weight: bold;
     border: 3px solid #000;
-    /*transform: translate(0, 0);*/
     transition: all 0.2s ease;
-    /* font-size: 1.1rem; */
-    /* box-shadow: 4px 4px 0 #000; */
 }
 
 .mission-section {
@@ -231,7 +224,6 @@ body {
 }
 
 
-/* Ensure nav height is accounted for in positioning */
 nav {
     min-height: 64px;
     /* Matches approximate nav height with padding */
@@ -253,11 +245,6 @@ nav {
     transition: all 0.2s ease;
     box-shadow: 8px 8px 0px #427b58;
 
-}
-
-.mission-card:hover {
-    /* transform: translate(-4px, -4px); */
-    /* box-shadow: 8px 8px 0px #427b58; */
 }
 
 .mission-card h3 {
