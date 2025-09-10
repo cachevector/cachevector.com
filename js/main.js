@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let contentHTML;
       if (target === "/") {
         const res = await fetch("pages/home.html");
+        console.log(target);
         contentHTML = await res.text();
         window.history.pushState({ page: "home" }, "Home", "/");
       } else if (target === "/Blogs") {

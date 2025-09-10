@@ -1,238 +1,370 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CacheVector - Advancing ML Libraries</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            darkMode: "class",
-        };
+      tailwind.config = {
+        darkMode: "class",
+      };
     </script>
     <script defer src="https://va.vercel-scripts.com/v1/script.js"></script>
     <script src="js/main.js"></script>
     <script src="js/theme.js" defer></script>
 
-    <link rel="icon" type="image/png" href="assets/favicons/favicon-96x96.png" sizes="96x96" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/favicons/favicon-96x96.png"
+      sizes="96x96"
+    />
     <link rel="icon" type="image/svg+xml" href="assets/favicons/favicon.svg" />
     <link rel="shortcut icon" href="assets/favicons/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicons/apple-touch-icon.png"
+    />
     <link rel="manifest" href="assets/favicons/site.webmanifest" />
 
     <link rel="stylesheet" href="css/styles.css" />
-</head>
+  </head>
 
-<body class="bg-[#f9f5d7] dark:bg-[#1d2021] text-[#1d2021] dark:text-[#f9f5d7] flex flex-col min-h-screen">
+  <body
+    class="bg-[#f9f5d7] dark:bg-[#1d2021] text-[#1d2021] dark:text-[#f9f5d7] flex flex-col min-h-screen"
+  >
     <!-- Navigation -->
     <div class="w-full flex justify-center text-md">
-        <nav class="w-full sm:w-4/5 md:w-3/5 flex items-center justify-between p-4 sm:p-6 mx-auto relative">
-            <!-- Logo -->
-            <div class="flex items-center sm:space-x-0">
-                <!-- <img src="assets/logos/Cache_Vector.svg" alt="CacheVector Logo"
+      <nav
+        class="w-full sm:w-4/5 md:w-3/5 flex items-center justify-between p-4 sm:p-6 mx-auto relative"
+      >
+        <!-- Logo -->
+        <div class="flex items-center sm:space-x-0">
+          <!-- <img src="assets/logos/Cache_Vector.svg" alt="CacheVector Logo"
                     class="hidden w-10 h-10 sm:w-12 sm:h-12" /> -->
 
-                <!-- Navigation Links (inline with logo on desktop) -->
-                <div id="nav-links" class="sm:flex sm:items-center sm:space-x-6">
-                    <a href="/" class="space-mono-bold navbar-button active">Home</a>
-                    <a href="/Blogs" class="navbar-button space-mono-bold">Blogs</a>
-                </div>
-            </div>
+          <!-- Navigation Links (inline with logo on desktop) -->
+          <div id="nav-links" class="sm:flex sm:items-center sm:space-x-6">
+            <a
+              href="/"
+              class="space-mono-bold navbar-button active [&.active]:border-[3px] [&.active]:border-[#1d2021] dark:[&.active]:border-[#f9f5d7] [&.active]:shadow-[4px_4px_0_#1d2021] dark:[&.active]:shadow-[4px_4px_0_#f9f5d7]"
+              >Home</a
+            >
+            <a
+              href="/Blogs"
+              class="navbar-button space-mono-bold [&.active]:border-[3px] [&.active]:border-[#1d2021] dark:[&.active]:border-[#f9f5d7] [&.active]:shadow-[4px_4px_0_#1d2021] dark:[&.active]:shadow-[4px_4px_0_#f9f5d7]"
+              >Blogs</a
+            >
+          </div>
+        </div>
 
-            <!-- Theme Toggle -->
-            <button id="theme-toggle" class="hover:text-[#427b58] ml-4 sm:ml-0">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"
-                        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                        clip-rule="evenodd" />
-                </svg>
-            </button>
-        </nav>
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="hover:text-[#427b58] ml-4 sm:ml-0">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </nav>
     </div>
 
     <!-- Hero Section -->
     <div id="content-wrapper" class="w-full flex-1 flex justify-center">
-        <main id="content" class="w-full sm:w-4/5 md:w-3/5 px-4 sm:px-6 py-10 sm:py-20">
-            <section class="pb-24 border-b-4 border-[#1d2021]">
-                <!-- Responsive width and padding -->
-                <div class="text-left">
-                    <h1 class="text-2xl sm:text-6xl md:text-8xl font-bold mb-6 sm:mb-8 hero-header">
-                        CacheVector
-                    </h1>
+      <main
+        id="content"
+        class="w-full sm:w-4/5 md:w-3/5 px-4 sm:px-6 py-10 sm:py-20"
+      >
+        <section
+          class="pb-24 border-b-4 border-[#1d2021] dark:border-[#f9f5d7]"
+        >
+          <!-- Responsive width and padding -->
+          <div class="text-left">
+            <h1
+              class="text-2xl sm:text-6xl md:text-8xl font-bold mb-6 sm:mb-8 hero-header"
+            >
+              CacheVector
+            </h1>
 
-                    <p class="text-base sm:text-md md:text-lg max-w-3xl mb-8 sm:mb-12">
-                        Advancing machine learning libraries, mathematical
-                        research, and developer tools through open-source
-                        innovation
-                    </p>
+            <p class="text-base sm:text-md md:text-lg max-w-3xl mb-8 sm:mb-12">
+              Advancing machine learning libraries, mathematical research, and
+              developer tools through open-source innovation
+            </p>
 
-                    <div class="flex flex-col items-start justify-center space-y-4">
-                        <a href="https://github.com/cachevector" target="_blank" class="cta-button">
-                            github.com/cachevector
-                        </a>
-                    </div>
-                </div>
+            <div class="flex flex-col items-start justify-center space-y-4">
+              <a
+                href="https://github.com/cachevector"
+                target="_blank"
+                class="cta-button border-[3px] border-[#1d2021] dark:border-[#f9f5d7] shadow-[6px_6px_0_#1d2021] dark:shadow-[6px_6px_0_#f9f5d7]"
+              >
+                github.com/cachevector
+              </a>
+            </div>
+          </div>
+        </section>
 
-            </section>
+        <!-- HashPrep Product Section -->
+        <section
+          class="pb-24 border-b-4 border-[#1d2021] dark:border-[#f9f5d7]"
+        >
+          <div class="mt-16">
+            <div>
+              <p class="font-bold underline">Currently Working on:</p>
+            </div>
+            <div class="product-header">
+              <h2 class="product-logo">HashPrep</h2>
+              <span class="beta-badge">UNDER DEV</span>
+            </div>
+            <p class="hashprep-description">
+              Think
+              <strong>"Pandas Profiling + ESLint + AutoML"</strong> specifically
+              designed for ML datasets.
+            </p>
+            <p style="margin-bottom: 2rem; color: var(--fg2)">
+              HashPrep is an intelligent dataset debugging and preparation
+              platform that acts as a comprehensive pre-training quality
+              assurance tool for machine learning projects. The platform catches
+              critical dataset issues before they derail your ML pipeline,
+              automatically suggests fixes, and generates production-ready
+              cleaning code - saving hours of manual data debugging and
+              preparation work.
+            </p>
 
-            <!-- HashPrep Product Section -->
-            <section class="pb-24 border-b-4 border-[#1d2021]">
-                <div class="mt-16">
-                    <div>
-                        <p class="font-bold underline">Currently Working on:</p>
-                    </div>
-                    <div class="product-header">
-                        <h2 class="product-logo">HashPrep</h2>
-                        <span class="beta-badge">UNDER DEV</span>
-                    </div>
-                    <p class="hashprep-description">
-                        Think <strong>"Pandas Profiling + ESLint + AutoML"</strong> specifically designed for ML
-                        datasets.
-                    </p>
-                    <p style="margin-bottom: 2rem; color: var(--fg2);">
-                        HashPrep is an intelligent dataset debugging and preparation platform that acts as a
-                        comprehensive
-                        pre-training quality assurance tool for machine learning projects. The platform catches critical
-                        dataset issues before they derail your ML pipeline, automatically suggests fixes, and generates
-                        production-ready cleaning code - saving hours of manual data debugging and preparation work.
-                    </p>
+            <div class="feature-grid">
+              <div class="feature-item">
+                <h4>Smart Detection</h4>
+                <p>
+                  Automatically identifies data quality issues, anomalies, and
+                  potential ML pipeline bottlenecks
+                </p>
+              </div>
+              <div class="feature-item">
+                <h4>Auto-Fix Suggestions</h4>
+                <p>
+                  Provides intelligent recommendations and generates
+                  production-ready cleaning code
+                </p>
+              </div>
+              <div class="feature-item">
+                <h4>Comprehensive Profiling</h4>
+                <p>
+                  Deep statistical analysis and visualization of your dataset
+                  characteristics
+                </p>
+              </div>
+              <div class="feature-item">
+                <h4>Pipeline Integration</h4>
+                <p>
+                  Seamlessly integrates into existing ML workflows and CI/CD
+                  pipelines
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-                    <div class="feature-grid">
-                        <div class="feature-item">
-                            <h4>Smart Detection</h4>
-                            <p>Automatically identifies data quality issues, anomalies, and potential ML pipeline
-                                bottlenecks</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>Auto-Fix Suggestions</h4>
-                            <p>Provides intelligent recommendations and generates production-ready cleaning code</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>Comprehensive Profiling</h4>
-                            <p>Deep statistical analysis and visualization of your dataset characteristics</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>Pipeline Integration</h4>
-                            <p>Seamlessly integrates into existing ML workflows and CI/CD pipelines</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Mission Section -->
-            <section class="pb-4">
-                <div class="mt-16">
-                    <div>
-                        <h2 id="mission"
-                            class="bg-[#427b58] text-[#f9f5d7] p-2 inline-block border-4 border-[#000] text-2xl font-bold mb-8">
-                            our mission</h2>
-                        <p class="mb-8 text-[#1d2021] italic">
-                            At cachevector, we're building the invisible parts that matter.
-                        </p>
-                    </div>
-                    <div class="mission-grid">
-                        <div class="mission-card">
-                            <h3>Work That Lasts</h3>
-                            <p>We focus on the parts most people skip. Math, algorithms, and libraries that aren’t
-                                glamorous, but make everything else possible.
-                            </p>
-                        </div>
-                        <div class="mission-card">
-                            <h3>Open by Default</h3>
-                            <p>Everything we do is open-source. We value clarity over polish, and we share our work so
-                                others can build on it. If it’s useful, it belongs in the open</p>
-                        </div>
-                        <div class="mission-card">
-                            <h3>Math, Models, Tools</h3>
-                            <p>We work on core mathematics, train and test ML and DL models, and create libraries that
-                                improve performance. The goal is always to make complex ideas usable in practice.</p>
-                        </div>
-                        <div class="mission-card">
-                            <h3>Quiet Progress</h3>
-                            <p>We don’t chase hype or buzzwords. We publish, package, and share work that people can
-                                depend on. Quiet progress matters more than loud promises.</p>
-                        </div>
-                    </div>
-                    <p style="margin-top: 3rem; color: var(--accent);">
-                        Our projects are open, simple, and built to be useful. If something helps you, star it. If you
-                        can improve it, fork it. Even just exploring the repos means a lot — the work is meant to be
-                        shared.
-                    </p>
-                </div>
-            </section>
-
-        </main>
+        <!-- Mission Section -->
+        <section class="pb-4">
+          <div class="mt-16">
+            <div>
+              <h2
+                id="mission"
+                class="cta-button bg-[#427b58] text-[#f9f5d7] p-2 inline-block border-4 dark:border-2 border-[#1d2021] dark:border-[#f9f5d7] shadow-[6px_6px_0_#1d2021] dark:shadow-[6px_6px_0_#f9f5d7] text-2xl font-bold mb-8"
+              >
+                our mission
+              </h2>
+              <p class="mb-8 text-[#1d2021] dark:text-[#f9f5d7] italic">
+                At cachevector, we're building the invisible parts that matter.
+              </p>
+            </div>
+            <div class="mission-grid">
+              <div class="mission-card">
+                <h3>Work That Lasts</h3>
+                <p>
+                  We focus on the parts most people skip. Math, algorithms, and
+                  libraries that aren’t glamorous, but make everything else
+                  possible.
+                </p>
+              </div>
+              <div class="mission-card">
+                <h3>Open by Default</h3>
+                <p>
+                  Everything we do is open-source. We value clarity over polish,
+                  and we share our work so others can build on it. If it’s
+                  useful, it belongs in the open
+                </p>
+              </div>
+              <div class="mission-card">
+                <h3>Math, Models, Tools</h3>
+                <p>
+                  We work on core mathematics, train and test ML and DL models,
+                  and create libraries that improve performance. The goal is
+                  always to make complex ideas usable in practice.
+                </p>
+              </div>
+              <div class="mission-card">
+                <h3>Quiet Progress</h3>
+                <p>
+                  We don’t chase hype or buzzwords. We publish, package, and
+                  share work that people can depend on. Quiet progress matters
+                  more than loud promises.
+                </p>
+              </div>
+            </div>
+            <p style="margin-top: 3rem; color: var(--accent)">
+              Our projects are open, simple, and built to be useful. If
+              something helps you, star it. If you can improve it, fork it. Even
+              just exploring the repos means a lot — the work is meant to be
+              shared.
+            </p>
+          </div>
+        </section>
+      </main>
     </div>
 
-<!-- Footer -->
-<footer
-    class="w-full sm:w-4/5 md:w-3/5 container mx-auto px-4 sm:px-6 py-6 sm:py-8 border-t border-[#1d2021] dark:border-[#f9f5d7] text-base sm:text-lg">
-    <!-- Responsive width and padding -->
-    <div class="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+    <!-- Footer -->
+    <footer
+      class="w-full sm:w-4/5 md:w-3/5 container mx-auto px-4 sm:px-6 py-6 sm:py-8 border-t border-[#1d2021] dark:border-[#f9f5d7] text-base sm:text-lg"
+    >
+      <!-- Responsive width and padding -->
+      <div
+        class="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0"
+      >
         <!-- Left Side -->
         <div class="flex items-center space-x-4">
-            <div>
-                <img src="assets/logos/Cache_Vector.svg" alt="CacheVector Logo" class="w-12 sm:w-16 h-12 sm:h-16" />
-            </div>
-            <div class="hidden sm:block">
-                <p>© 2025 CacheVector</p>
-                <p>All rights reserved</p>
-            </div>
+          <div>
+            <img
+              src="assets/logos/Cache_Vector.svg"
+              alt="CacheVector Logo"
+              class="w-12 sm:w-16 h-12 sm:h-16"
+            />
+          </div>
+          <div class="hidden sm:block">
+            <p>© 2025 CacheVector</p>
+            <p>All rights reserved</p>
+          </div>
         </div>
 
         <!-- Right Side -->
         <div class="flex flex-col items-center sm:items-end w-full sm:w-auto">
-            <!-- Mobile order (socials → backed → copyright) -->
-            <div class="flex flex-col items-center sm:hidden w-full space-y-2">
-                <div class="flex space-x-4 justify-center">
-                    <a href="https://www.github.com/cachevector" target="_blank" class="social-icon text-gray-400">
-                        <img src="assets/icons/github_dm.svg" alt="Github Link"
-                            class="dark:block hidden w-8 h-8" />
-                        <img src="assets/icons/github_lm.svg" alt="Github Link"
-                            class="block dark:hidden w-8 h-8" />
-                    </a>
-                    <a href="https://x.com/cvectordotcom" target="_blank" class="social-icon text-gray-400">
-                        <img src="assets/icons/x_dm.svg" alt="X Link" class="dark:block hidden w-8 h-8" />
-                        <img src="assets/icons/x_lm.svg" alt="X Link" class="block dark:hidden w-8 h-8" />
-                    </a>
-                    <a href="https://discord.gg/spuz77bcJg" target="_blank" class="social-icon text-gray-400">
-                        <img src="assets/icons/discord_dm.svg" alt="Discord Link"
-                            class="dark:block hidden w-8 h-8" />
-                        <img src="assets/icons/discord_lm.svg" alt="Discord Link"
-                            class="block dark:hidden w-8 h-8" />
-                    </a>
-                </div>
-                <div class="text-sm">Backed by Growvth</div>
-                <div class="text-xs text-center">© 2025 CacheVector. All rights reserved.</div>
+          <!-- Mobile order (socials → backed → copyright) -->
+          <div class="flex flex-col items-center sm:hidden w-full space-y-2">
+            <div class="flex space-x-4 justify-center">
+              <a
+                href="https://www.github.com/cachevector"
+                target="_blank"
+                class="social-icon text-gray-400"
+              >
+                <img
+                  src="assets/icons/github_dm.svg"
+                  alt="Github Link"
+                  class="dark:block hidden w-8 h-8"
+                />
+                <img
+                  src="assets/icons/github_lm.svg"
+                  alt="Github Link"
+                  class="block dark:hidden w-8 h-8"
+                />
+              </a>
+              <a
+                href="https://x.com/cvectordotcom"
+                target="_blank"
+                class="social-icon text-gray-400"
+              >
+                <img
+                  src="assets/icons/x_dm.svg"
+                  alt="X Link"
+                  class="dark:block hidden w-8 h-8"
+                />
+                <img
+                  src="assets/icons/x_lm.svg"
+                  alt="X Link"
+                  class="block dark:hidden w-8 h-8"
+                />
+              </a>
+              <a
+                href="https://discord.gg/spuz77bcJg"
+                target="_blank"
+                class="social-icon text-gray-400"
+              >
+                <img
+                  src="assets/icons/discord_dm.svg"
+                  alt="Discord Link"
+                  class="dark:block hidden w-8 h-8"
+                />
+                <img
+                  src="assets/icons/discord_lm.svg"
+                  alt="Discord Link"
+                  class="block dark:hidden w-8 h-8"
+                />
+              </a>
             </div>
+            <div class="text-sm">Backed by Growvth</div>
+            <div class="text-xs text-center">
+              © 2025 CacheVector. All rights reserved.
+            </div>
+          </div>
 
-            <!-- Desktop order (unchanged) -->
-            <div class="hidden sm:flex flex-col items-end">
-                <div class="flex space-x-4">
-                    <a href="https://www.github.com/cachevector" target="_blank" class="social-icon text-gray-400">
-                        <img src="assets/icons/github_dm.svg" alt="Github Link"
-                            class="dark:block hidden w-8 h-8" />
-                        <img src="assets/icons/github_lm.svg" alt="Github Link"
-                            class="block dark:hidden w-8 h-8" />
-                    </a>
-                    <a href="https://x.com/cvectordotcom" target="_blank" class="social-icon text-gray-400">
-                        <img src="assets/icons/x_dm.svg" alt="X Link" class="dark:block hidden w-8 h-8" />
-                        <img src="assets/icons/x_lm.svg" alt="X Link" class="block dark:hidden w-8 h-8" />
-                    </a>
-                    <a href="https://discord.gg/spuz77bcJg" target="_blank" class="social-icon text-gray-400">
-                        <img src="assets/icons/discord_dm.svg" alt="Discord Link"
-                            class="dark:block hidden w-8 h-8" />
-                        <img src="assets/icons/discord_lm.svg" alt="Discord Link"
-                            class="block dark:hidden w-8 h-8" />
-                    </a>
-                </div>
-                <div class="mt-2">Backed by Growvth</div>
+          <!-- Desktop order (unchanged) -->
+          <div class="hidden sm:flex flex-col items-end">
+            <div class="flex space-x-4">
+              <a
+                href="https://www.github.com/cachevector"
+                target="_blank"
+                class="social-icon text-gray-400"
+              >
+                <img
+                  src="assets/icons/github_dm.svg"
+                  alt="Github Link"
+                  class="dark:block hidden w-8 h-8"
+                />
+                <img
+                  src="assets/icons/github_lm.svg"
+                  alt="Github Link"
+                  class="block dark:hidden w-8 h-8"
+                />
+              </a>
+              <a
+                href="https://x.com/cvectordotcom"
+                target="_blank"
+                class="social-icon text-gray-400"
+              >
+                <img
+                  src="assets/icons/x_dm.svg"
+                  alt="X Link"
+                  class="dark:block hidden w-8 h-8"
+                />
+                <img
+                  src="assets/icons/x_lm.svg"
+                  alt="X Link"
+                  class="block dark:hidden w-8 h-8"
+                />
+              </a>
+              <a
+                href="https://discord.gg/spuz77bcJg"
+                target="_blank"
+                class="social-icon text-gray-400"
+              >
+                <img
+                  src="assets/icons/discord_dm.svg"
+                  alt="Discord Link"
+                  class="dark:block hidden w-8 h-8"
+                />
+                <img
+                  src="assets/icons/discord_lm.svg"
+                  alt="Discord Link"
+                  class="block dark:hidden w-8 h-8"
+                />
+              </a>
             </div>
+            <div class="mt-2">Backed by Growvth</div>
+          </div>
         </div>
-    </div>
-</footer>
-
-</body>
-
+      </div>
+    </footer>
+  </body>
 </html>

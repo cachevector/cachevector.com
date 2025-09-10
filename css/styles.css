@@ -83,16 +83,16 @@ body {
     color: #fbf1c7;
     text-decoration: none;
     font-weight: bold;
-    border: 3px solid #000;
+    /* border: 3px solid #22412f; */
     /*transform: translate(0, 0);*/
     transition: all 0.2s ease;
     font-size: 1.1rem;
-    box-shadow: 6px 6px 0 #000;
+    /* box-shadow: 6px 6px 0 #000; */
 }
 
 .cta-button:hover {
-    transform: translate(-4px, -4px);
-    box-shadow: 8px 8px 0px #000;
+    /* transform: translate(-4px, -4px); */
+    /* box-shadow: 8px 8px 0px #000; */
 }
 
 .navbar-button.active {
@@ -106,7 +106,7 @@ body {
     /*transform: translate(0, 0);*/
     transition: all 0.2s ease;
     /* font-size: 1.1rem; */
-    box-shadow: 4px 4px 0 #000;
+    /* box-shadow: 4px 4px 0 #000; */
 }
 
 .mission-section {
