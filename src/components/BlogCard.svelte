@@ -11,23 +11,24 @@
 </script>
 
 <a href="/blog/{slug}" class="card">
-  <div class="meta">
-    <span class="category">{category}</span>
-    <span class="date">{formatDate(date)}</span>
+  <div class="card-accent"></div>
+  <div class="card-body">
+    <div class="meta">
+      <span class="category">{category}</span>
+      <span class="date">{formatDate(date)}</span>
+    </div>
+    <h3 class="title">{title}</h3>
+    <p class="excerpt">{excerpt}</p>
+    <span class="read-more">Read more &rarr;</span>
   </div>
-  <h3 class="title">{title}</h3>
-  <p class="excerpt">{excerpt}</p>
-  <span class="read-more">Read more &rarr;</span>
 </a>
 
 <style>
   .card {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    overflow: hidden;
     background-color: var(--bg-primary);
     border: var(--border-width) solid var(--border-default);
-    padding: 24px;
     transition: border-color 0.15s ease;
     text-decoration: none;
     color: inherit;
@@ -35,6 +36,21 @@
 
   .card:hover {
     border-color: var(--border-hover);
+  }
+
+  .card-accent {
+    width: 4px;
+    flex-shrink: 0;
+    background-color: var(--text-primary);
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 24px;
+    flex: 1;
+    min-width: 0;
   }
 
   .meta {

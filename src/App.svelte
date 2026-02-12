@@ -9,6 +9,7 @@
 
   const routes = {
     "/": () => import("./pages/Home.svelte"),
+    "/projects": () => import("./pages/Projects.svelte"),
     "/blog": () => import("./pages/Blog.svelte"),
   };
 

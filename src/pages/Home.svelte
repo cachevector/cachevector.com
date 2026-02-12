@@ -8,38 +8,23 @@
     {
       name: "HashPrep",
       description: "Intelligent dataset debugging and preparation platform that catches critical data quality issues before they derail your ML pipeline.",
-      status: "Under Dev",
+      status: "Beta",
       features: ["Smart Detection", "Auto-Fix Suggestions", "Comprehensive Profiling", "Pipeline Integration"],
+      links: {
+        website: "https://hashprep.com",
+        pypi: "https://pypi.org/project/hashprep/",
+        github: "https://github.com/cachevector/hashprep",
+      },
     },
     {
       name: "FuzzyBunny",
       description: "High-performance string matching engine with C++ SIMD optimization and Pybind11 bindings for Python runtimes.",
       status: "Live",
       features: ["Levenshtein Optimization", "Token-Based Similarity", "Hybrid Scoring", "Unicode Support"],
-    },
-    {
-      name: "Noise2Normal",
-      description: "Statistical image restoration using Central Limit Theorem convergence for noise-free reconstruction without neural networks.",
-      status: "Research",
-      features: ["CLT-Based Denoising", "OpenCV Integration"],
-    },
-    {
-      name: "Comprexx",
-      description: "Modern compression engineering exploring entropy coding, dictionary methods, and asymmetric numeral systems.",
-      status: "Research",
-      features: ["Huffman Coding", "LZ77", "ANS Analysis"],
-    },
-    {
-      name: "TokenWise",
-      description: "Efficient binary data serialization with length-prefixed protocols designed for high-throughput systems.",
-      status: "Research",
-      features: ["TOON Format", "Zero-Copy Reads"],
-    },
-    {
-      name: "MCPI",
-      description: "Monte Carlo probabilistic computing experiments exploring random sampling methods and convergence analysis.",
-      status: "Research",
-      features: ["Mersenne Twister PRNG", "Convergence Visualization"],
+      links: {
+        pypi: "https://pypi.org/project/fuzzybunny/",
+        github: "https://github.com/cachevector/fuzzybunny",
+      },
     },
   ];
 
@@ -82,6 +67,9 @@
       <ProductCard {...product} />
     {/each}
   </div>
+  <div class="view-all-projects">
+    <a href="/projects">View all projects &rarr;</a>
+  </div>
 </section>
 
 <section class="section">
@@ -92,8 +80,11 @@
   <div class="mission-grid">
     {#each mission as item}
       <article class="mission-card">
-        <h3>{item.title}</h3>
-        <p>{item.text}</p>
+        <div class="mission-accent"></div>
+        <div class="mission-body">
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </div>
       </article>
     {/each}
   </div>
@@ -154,12 +145,25 @@
   .mission-card {
     background-color: var(--bg-primary);
     border: var(--border-width) solid var(--border-default);
-    padding: 24px;
+    display: flex;
+    overflow: hidden;
     transition: border-color 0.15s ease;
   }
 
   .mission-card:hover {
     border-color: var(--border-hover);
+  }
+
+  .mission-accent {
+    width: 4px;
+    flex-shrink: 0;
+    background-color: var(--text-primary);
+  }
+
+  .mission-body {
+    padding: 24px;
+    flex: 1;
+    min-width: 0;
   }
 
   .mission-card h3 {
@@ -204,6 +208,23 @@
     color: var(--accent-hover);
   }
 
+  .view-all-projects {
+    margin-top: 24px;
+    text-align: center;
+  }
+
+  .view-all-projects a {
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .view-all-projects a:hover {
+    color: var(--accent-hover);
+  }
+
   @media (min-width: 641px) {
     .section {
       padding: 80px 0;
@@ -223,10 +244,6 @@
   }
 
   @media (min-width: 1025px) {
-    .product-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
     .blog-grid {
       grid-template-columns: repeat(3, 1fr);
     }

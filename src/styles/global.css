@@ -29,6 +29,8 @@ html {
   --max-width: 1200px;
   --radius: 0px;
   --border-width: 1.5px;
+  --tag-border: #c0c0c0;
+  --tag-text: #5a5a5a;
 }
 
 [data-theme="dark"] {
@@ -41,6 +43,8 @@ html {
   --border-hover: #ffffff;
   --accent: #5a9a72;
   --accent-hover: #6db085;
+  --tag-border: #3a3a3a;
+  --tag-text: #999999;
 }
 
 body {

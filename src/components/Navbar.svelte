@@ -6,6 +6,7 @@
 
   const links = [
     { href: "/", label: "Home" },
+    { href: "/projects", label: "Projects" },
     { href: "/blog", label: "Blog" },
   ];
 
@@ -27,7 +28,7 @@
           <a
             href={link.href}
             class="nav-link"
-            class:active={currentPath === link.href || (link.href === "/blog" && currentPath.startsWith("/blog"))}
+            class:active={currentPath === link.href || (link.href === "/blog" && currentPath.startsWith("/blog")) || (link.href === "/projects" && currentPath.startsWith("/projects"))}
           >
             {link.label}
           </a>
@@ -64,7 +65,7 @@
         <a
           href={link.href}
           class="mobile-link"
-          class:active={currentPath === link.href || (link.href === "/blog" && currentPath.startsWith("/blog"))}
+          class:active={currentPath === link.href || (link.href === "/blog" && currentPath.startsWith("/blog")) || (link.href === "/projects" && currentPath.startsWith("/projects"))}
           onclick={closeMobile}
         >
           {link.label}
