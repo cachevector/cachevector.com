@@ -21,9 +21,10 @@
   }
 
   h1 {
+    font-family: var(--font-heading);
     font-size: clamp(2.5rem, 6vw, 5rem);
-    font-weight: 900;
-    letter-spacing: -0.04em;
+    font-weight: 800;
+    letter-spacing: -0.03em;
     margin-bottom: 20px;
     line-height: 1.05;
   }

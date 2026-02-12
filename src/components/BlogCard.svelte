@@ -57,7 +57,7 @@
   }
 
   .title {
-    font-family: var(--font-heading);
+    font-family: "Epilogue", var(--font-heading);
     font-size: 1.0625rem;
     font-weight: 600;
     color: var(--text-primary);

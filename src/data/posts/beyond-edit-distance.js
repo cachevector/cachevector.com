@@ -11,18 +11,18 @@ export default `
 
 <svg viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width:560px;margin:32px auto;display:block;">
   <style>
-    .d-text { font-family: var(--font-mono); font-size: 12px; fill: var(--text-primary); }
+    .d-text { font-family: var(--font-mono); font-size: 11px; fill: var(--text-primary); }
     .d-label { font-family: var(--font-body); font-size: 13px; fill: var(--text-secondary); }
   </style>
-  <text x="20" y="20" class="d-label" font-weight="600">Tokenization: Two Approaches</text>
-  <rect x="20" y="35" width="260" height="65" fill="var(--bg-surface)" stroke="var(--border-default)" stroke-width="1.5"/>
-  <text x="150" y="53" class="d-label" text-anchor="middle" font-weight="500">Whitespace Splitting</text>
-  <text x="150" y="73" class="d-text" text-anchor="middle">"wireless bluetooth headphones"</text>
-  <text x="150" y="90" class="d-text" text-anchor="middle" fill="var(--accent)">[wireless, bluetooth, headphones]</text>
-  <rect x="320" y="35" width="260" height="65" fill="var(--bg-surface)" stroke="var(--border-default)" stroke-width="1.5"/>
-  <text x="450" y="53" class="d-label" text-anchor="middle" font-weight="500">Character N-grams (n=3)</text>
-  <text x="450" y="73" class="d-text" text-anchor="middle">"wireless"</text>
-  <text x="450" y="90" class="d-text" text-anchor="middle" fill="var(--accent)">[wir, ire, rel, ele, les, ess]</text>
+  <text x="300" y="18" class="d-label" text-anchor="middle" font-weight="600">Tokenization: Two Approaches</text>
+  <rect x="20" y="32" width="268" height="68" fill="var(--bg-surface)" stroke="var(--border-default)" stroke-width="1.5"/>
+  <text x="154" y="52" class="d-label" text-anchor="middle" font-weight="500">Whitespace Splitting</text>
+  <text x="154" y="72" class="d-text" text-anchor="middle">"wireless bluetooth headphones"</text>
+  <text x="154" y="89" class="d-text" text-anchor="middle" fill="var(--accent)">[wireless, bluetooth, headphones]</text>
+  <rect x="312" y="32" width="268" height="68" fill="var(--bg-surface)" stroke="var(--border-default)" stroke-width="1.5"/>
+  <text x="446" y="52" class="d-label" text-anchor="middle" font-weight="500">Character N-grams (n=3)</text>
+  <text x="446" y="72" class="d-text" text-anchor="middle">"wireless"</text>
+  <text x="446" y="89" class="d-text" text-anchor="middle" fill="var(--accent)">[wir, ire, rel, ele, les, ess]</text>
   <rect x="20" y="120" width="560" height="60" fill="var(--accent)" fill-opacity="0.15" stroke="var(--accent)" stroke-width="1.5"/>
   <text x="300" y="142" class="d-label" text-anchor="middle">Whitespace: preserves semantic units, fast, order-dependent</text>
   <text x="300" y="162" class="d-label" text-anchor="middle">N-grams: captures subword similarity, handles typos, slower</text>

@@ -83,7 +83,7 @@ PCG-64           3.14160         0.00001</code></pre>
 
 <p>Each additional digit of accuracy costs <strong>100x more samples</strong>. For pi estimation, this convergence rate is impractical (we know pi to trillions of digits analytically). But for problems without analytical solutions, high-dimensional integrals, complex system simulations, Monte Carlo's guaranteed 1/sqrt(N) convergence regardless of dimensionality makes it the only practical method.</p>
 
-<svg viewBox="0 0 600 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width:560px;margin:32px auto;display:block;">
+<svg viewBox="0 0 600 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width:560px;margin:32px auto;display:block;">
   <style>
     .et { font-family: var(--font-mono); font-size: 11px; fill: var(--text-primary); }
     .el { font-family: var(--font-body); font-size: 13px; fill: var(--text-secondary); }
@@ -102,7 +102,7 @@ PCG-64           3.14160         0.00001</code></pre>
     <text x="320" y="180" class="et" text-anchor="middle">10^6</text>
     <text x="460" y="180" class="et" text-anchor="middle">10^8</text>
     <path d="M20,30 L40,130 L60,50 L80,95 L120,65 L160,88 L200,75 L240,82 L280,78 L320,80 L360,79.5 L400,80.2 L440,79.9 L470,80" stroke="var(--accent)" stroke-width="2" fill="none"/>
-    <text x="240" y="195" class="el" text-anchor="middle">Samples (N), log scale</text>
+    <text x="240" y="200" class="el" text-anchor="middle">Samples (N), log scale</text>
   </g>
 </svg>
 

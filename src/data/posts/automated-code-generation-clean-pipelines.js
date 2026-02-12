@@ -11,7 +11,7 @@ export default `
 
 <svg viewBox="0 0 600 260" fill="none" xmlns="http://www.w3.org/2000/svg" style="max-width:560px;margin:32px auto;display:block;">
   <style>
-    .gt { font-family: var(--font-mono); font-size: 11px; fill: var(--text-primary); }
+    .gt { font-family: var(--font-body); font-size: 12px; fill: var(--text-primary); }
     .gl { font-family: var(--font-body); font-size: 13px; fill: var(--text-secondary); }
     .gbox { fill: var(--bg-surface); stroke: var(--border-default); stroke-width: 1.5; }
     .garrow { stroke: var(--text-muted); stroke-width: 1.5; fill: none; marker-end: url(#ah3); }
@@ -22,22 +22,22 @@ export default `
     </marker>
   </defs>
   <text x="300" y="18" class="gl" text-anchor="middle" font-weight="600">Cleaning Pipeline DAG</text>
-  <rect x="230" y="30" width="140" height="36" class="gbox"/>
+  <rect x="215" y="30" width="170" height="36" class="gbox"/>
   <text x="300" y="53" class="gt" text-anchor="middle">Type Inference</text>
-  <path d="M250 66 L170 90" class="garrow"/>
-  <path d="M350 66 L430 90" class="garrow"/>
-  <rect x="100" y="90" width="140" height="36" class="gbox"/>
-  <text x="170" y="113" class="gt" text-anchor="middle">Missing Value Detection</text>
-  <rect x="360" y="90" width="140" height="36" class="gbox"/>
-  <text x="430" y="113" class="gt" text-anchor="middle">Outlier Detection</text>
-  <path d="M170 126 L170 150" class="garrow"/>
-  <path d="M430 126 L430 150" class="garrow"/>
-  <rect x="100" y="150" width="140" height="36" class="gbox"/>
-  <text x="170" y="173" class="gt" text-anchor="middle">Imputation Strategy</text>
-  <rect x="360" y="150" width="140" height="36" class="gbox"/>
-  <text x="430" y="173" class="gt" text-anchor="middle">Clip / Transform</text>
-  <path d="M170 186 L265 210" class="garrow"/>
-  <path d="M430 186 L335 210" class="garrow"/>
+  <path d="M245 66 L155 90" class="garrow"/>
+  <path d="M355 66 L445 90" class="garrow"/>
+  <rect x="60" y="90" width="190" height="36" class="gbox"/>
+  <text x="155" y="113" class="gt" text-anchor="middle">Missing Value Detection</text>
+  <rect x="350" y="90" width="190" height="36" class="gbox"/>
+  <text x="445" y="113" class="gt" text-anchor="middle">Outlier Detection</text>
+  <path d="M155 126 L155 150" class="garrow"/>
+  <path d="M445 126 L445 150" class="garrow"/>
+  <rect x="60" y="150" width="190" height="36" class="gbox"/>
+  <text x="155" y="173" class="gt" text-anchor="middle">Imputation Strategy</text>
+  <rect x="350" y="150" width="190" height="36" class="gbox"/>
+  <text x="445" y="173" class="gt" text-anchor="middle">Clip / Transform</text>
+  <path d="M155 186 L255 210" class="garrow"/>
+  <path d="M445 186 L345 210" class="garrow"/>
   <rect x="210" y="210" width="180" height="36" class="gbox" stroke="var(--accent)" stroke-width="2"/>
   <text x="300" y="233" class="gt" text-anchor="middle" fill="var(--accent)">Code Generation</text>
 </svg>

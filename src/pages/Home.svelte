@@ -151,7 +151,7 @@
   }
 
   .mission-card h3 {
-    font-family: var(--font-heading);
+    font-family: "Epilogue", var(--font-heading);
     font-weight: 600;
     margin-bottom: 8px;
   }

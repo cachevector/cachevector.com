@@ -1,9 +1,11 @@
 <script>
+  import { onMount } from "svelte";
   import { blogs } from "../data/blogs.js";
 
   let { slug } = $props();
 
   let post = $derived(blogs.find(b => b.slug === slug));
+  let contentEl = $state(null);
 
   function formatDate(dateStr) {
     return new Date(dateStr).toLocaleDateString("en-US", {
@@ -12,6 +14,29 @@
       day: "numeric",
     });
   }
+
+  async function highlightCode() {
+    if (!contentEl) return;
+    const hljs = (await import("highlight.js/lib/core")).default;
+    const cpp = (await import("highlight.js/lib/languages/cpp")).default;
+    const python = (await import("highlight.js/lib/languages/python")).default;
+    const go = (await import("highlight.js/lib/languages/go")).default;
+    hljs.registerLanguage("cpp", cpp);
+    hljs.registerLanguage("python", python);
+    hljs.registerLanguage("go", go);
+    contentEl.querySelectorAll("pre code").forEach(block => {
+      hljs.highlightElement(block);
+    });
+  }
+
+  onMount(() => {
+    highlightCode();
+  });
+
+  $effect(() => {
+    slug;
+    if (contentEl) highlightCode();
+  });
 </script>
 
 <svelte:head>
@@ -31,7 +56,7 @@
       </div>
       <h1>{post.title}</h1>
     </header>
-    <div class="article-content">
+    <div class="article-content" bind:this={contentEl}>
       {@html post.content}
     </div>
     <footer class="article-footer">
@@ -94,13 +119,14 @@
   }
 
   .article-meta h1 {
+    font-family: "Epilogue", var(--font-heading);
     font-size: clamp(1.75rem, 4vw, 2.5rem);
     line-height: 1.2;
     letter-spacing: -0.03em;
   }
 
   .article-content :global(h2) {
-    font-family: var(--font-heading);
+    font-family: "Epilogue", var(--font-heading);
     font-size: 1.5rem;
     font-weight: 600;
     margin-top: 48px;
@@ -109,7 +135,7 @@
   }
 
   .article-content :global(h3) {
-    font-family: var(--font-heading);
+    font-family: "Epilogue", var(--font-heading);
     font-size: 1.25rem;
     font-weight: 500;
     margin-top: 32px;
@@ -131,6 +157,12 @@
     margin: 24px 0;
     font-size: 0.875rem;
     line-height: 1.6;
+  }
+
+  .article-content :global(pre code) {
+    background: none;
+    border: none;
+    padding: 0;
   }
 
   .article-content :global(code) {
@@ -181,6 +213,49 @@
     margin: 24px 0;
     color: var(--text-muted);
     font-style: italic;
+  }
+
+  .article-content :global(.hljs) {
+    background: transparent;
+    color: var(--text-primary);
+  }
+
+  .article-content :global(.hljs-keyword),
+  .article-content :global(.hljs-built_in),
+  .article-content :global(.hljs-type) {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .article-content :global(.hljs-string),
+  .article-content :global(.hljs-attr) {
+    color: #b56b45;
+  }
+
+  .article-content :global(.hljs-number),
+  .article-content :global(.hljs-literal) {
+    color: #8f6cc4;
+  }
+
+  .article-content :global(.hljs-comment) {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .article-content :global(.hljs-function) {
+    color: var(--text-primary);
+  }
+
+  .article-content :global(.hljs-title) {
+    color: #3a7cc2;
+  }
+
+  .article-content :global(.hljs-params) {
+    color: var(--text-secondary);
+  }
+
+  .article-content :global(.hljs-meta) {
+    color: var(--text-muted);
   }
 
   .article-footer {

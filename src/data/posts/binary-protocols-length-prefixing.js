@@ -16,8 +16,8 @@ export default `
     .bbox { fill: var(--bg-surface); stroke: var(--border-default); stroke-width: 1.5; }
   </style>
   <text x="300" y="16" class="bl" text-anchor="middle" font-weight="600">Delimiter vs Length-Prefix: Field Access</text>
-  <g transform="translate(20, 35)">
-    <text x="260" y="10" class="bl" text-anchor="middle">Delimited (must scan all bytes to find field N)</text>
+  <g transform="translate(135, 35)">
+    <text x="165" y="10" class="bl" text-anchor="middle">Delimited (must scan all bytes to find field N)</text>
     <rect x="0" y="20" width="60" height="30" class="bbox"/>
     <text x="30" y="40" class="bt" text-anchor="middle">field1</text>
     <rect x="60" y="20" width="10" height="30" fill="var(--accent)" fill-opacity="0.4" stroke="var(--accent)" stroke-width="1.5"/>
@@ -35,8 +35,8 @@ export default `
     <path d="M0 62 L330 62" stroke="var(--accent)" stroke-width="2" stroke-dasharray="3,3"/>
     <text x="165" y="78" class="bt" text-anchor="middle" fill="var(--accent)">must scan 330 bytes to reach field4</text>
   </g>
-  <g transform="translate(20, 130)">
-    <text x="260" y="10" class="bl" text-anchor="middle">Length-Prefixed (jump directly to field N)</text>
+  <g transform="translate(110, 130)">
+    <text x="190" y="10" class="bl" text-anchor="middle">Length-Prefixed (jump directly to field N)</text>
     <rect x="0" y="20" width="20" height="30" fill="var(--accent)" fill-opacity="0.25" stroke="var(--accent)" stroke-width="1.5"/>
     <text x="10" y="40" class="bt" text-anchor="middle" fill="var(--accent)">6</text>
     <rect x="20" y="20" width="60" height="30" class="bbox"/>
@@ -53,8 +53,8 @@ export default `
     <text x="310" y="40" class="bt" text-anchor="middle" fill="var(--accent)">6</text>
     <rect x="320" y="20" width="60" height="30" class="bbox" stroke="var(--accent)" stroke-width="2"/>
     <text x="350" y="40" class="bt" text-anchor="middle" fill="var(--accent)">field4</text>
-    <path d="M0 62 L300 62" stroke="var(--accent)" stroke-width="2"/>
-    <text x="150" y="78" class="bt" text-anchor="middle" fill="var(--accent)">sum lengths: jump to byte 300 in O(1)</text>
+    <path d="M0 62 L380 62" stroke="var(--accent)" stroke-width="2"/>
+    <text x="190" y="78" class="bt" text-anchor="middle" fill="var(--accent)">sum lengths: jump to byte 300 in O(1)</text>
   </g>
 </svg>
 
