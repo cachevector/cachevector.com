@@ -131,3 +131,6 @@ dist
 
 # backup files
 *.bak
+
+CLAUDE.md
+blogs.md
