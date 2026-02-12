@@ -80,11 +80,8 @@
   <div class="mission-grid">
     {#each mission as item}
       <article class="mission-card">
-        <div class="mission-accent"></div>
-        <div class="mission-body">
-          <h3>{item.title}</h3>
-          <p>{item.text}</p>
-        </div>
+        <h3>{item.title}</h3>
+        <p>{item.text}</p>
       </article>
     {/each}
   </div>
@@ -145,25 +142,12 @@
   .mission-card {
     background-color: var(--bg-primary);
     border: var(--border-width) solid var(--border-default);
-    display: flex;
-    overflow: hidden;
+    padding: 24px;
     transition: border-color 0.15s ease;
   }
 
   .mission-card:hover {
     border-color: var(--border-hover);
-  }
-
-  .mission-accent {
-    width: 4px;
-    flex-shrink: 0;
-    background-color: var(--text-primary);
-  }
-
-  .mission-body {
-    padding: 24px;
-    flex: 1;
-    min-width: 0;
   }
 
   .mission-card h3 {

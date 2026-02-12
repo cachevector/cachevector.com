@@ -3,13 +3,12 @@
 </script>
 
 <article class="card">
-  <div class="card-accent"></div>
-  <div class="card-body">
-    <div class="header">
-      <h3 class="name">{name}</h3>
-      <span class="status" class:status-live={status === "Live"} class:status-beta={status === "Beta"}>{status}</span>
-    </div>
-    <p class="description">{description}</p>
+  <div class="header">
+    <h3 class="name">{name}</h3>
+    <span class="status" class:status-live={status === "Live"} class:status-beta={status === "Beta"}>{status}</span>
+  </div>
+  <p class="description">{description}</p>
+  <div class="card-footer">
     {#if features.length > 0}
       <ul class="features">
         {#each features as feature}
@@ -37,25 +36,15 @@
   .card {
     background-color: var(--bg-primary);
     border: var(--border-width) solid var(--border-default);
+    padding: 28px;
     transition: border-color 0.15s ease;
     display: flex;
-    overflow: hidden;
+    flex-direction: column;
+    height: 100%;
   }
 
   .card:hover {
     border-color: var(--border-hover);
-  }
-
-  .card-accent {
-    width: 4px;
-    flex-shrink: 0;
-    background-color: var(--text-primary);
-  }
-
-  .card-body {
-    padding: 28px;
-    flex: 1;
-    min-width: 0;
   }
 
   .header {
@@ -98,19 +87,23 @@
     font-size: 0.9375rem;
     color: var(--text-secondary);
     line-height: 1.5;
-    margin-bottom: 16px;
+    flex: 1;
+  }
+
+  .card-footer {
+    margin-top: 16px;
   }
 
   .features {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 6px;
   }
 
   .features li {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
     color: var(--tag-text);
-    padding: 4px 10px;
+    padding: 3px 8px;
     background-color: var(--bg-surface);
     border: 1px solid var(--tag-border);
     font-weight: 500;
@@ -120,8 +113,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 16px;
-    padding-top: 16px;
+    margin-top: 14px;
+    padding-top: 14px;
     border-top: 1px solid var(--border-default);
   }
 
